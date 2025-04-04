@@ -1,5 +1,5 @@
-import React from 'react'
-import logo from '../img/logo.png'
+import React from "react";
+import logo from "../img/logo.png";
 
 function Footer() {
   return (
@@ -7,7 +7,7 @@ function Footer() {
       <img src={logo} alt="logo" />
       <span>Made with me 💕</span>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -12,21 +12,19 @@ export const AuthContextProvider = ({ children }) => {
     const res = await axios.post("/auth/login", input);
     setCurrentUser(res.data);
 
-    // console.log("User logged in: ", res.data);
   };
   const logout = async () => {
-    await axios.post("/auth/logout" );
+    await axios.post("/auth/logout");
     setCurrentUser(null);
   };
 
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(currentUser));
+  }, [currentUser]);
 
-  useEffect(()=>{
-    localStorage.setItem("user", JSON.stringify(currentUser))
-  },[currentUser]);
-
-  return(
-    <AuthContext.Provider value={{currentUser,login, logout}}>
-        {children }
+  return (
+    <AuthContext.Provider value={{ currentUser, login, logout }}>
+      {children}
     </AuthContext.Provider>
-  )
+  );
 };

@@ -3,17 +3,6 @@ import { db } from "../db.js";
 import jwt from "jsonwebtoken";
 
 export const register = (req, res) => {
-  // db.query("desc users", [], (err, data) => {
-  //   if (err) return res.json(err);
-  //   console.log(data);
-  //   console.log("Data fetched from db");
-
-  // });
-
-  // return;
-
-  // CHECK EXISTING USER
-
   const q = "SELECT * FROM users WHERE email = ? OR username =?";
   db.query(q, [req.body.email, req.body.username], (err, data) => {
     if (err) return res.json(err);
@@ -51,8 +40,6 @@ export const login = (req, res) => {
 
     const token = jwt.sign({ id: data[0].id }, "jwtkey");
     const { password, ...other } = data[0];
-
-    // console.log("Token generated: ", token);
 
     res
       .cookie("access_token", token, {

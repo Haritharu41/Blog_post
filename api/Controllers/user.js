@@ -1,4 +1,4 @@
-import {db} from "../db.js";
+import { db } from "../db.js";
 export const addUser = (req, res) => {
   res.json("User controller");
 
@@ -8,12 +8,11 @@ export const addUser = (req, res) => {
     return res.status(200).json(data);
   });
 
-
   db.connect((err) => {
-    if(err) {
-        console.error('Error connecting to database:', err)
-        return
+    if (err) {
+      console.error("Error connecting to database:", err);
+      return;
     }
-    console.log('Connected to database')
-})
+    console.log("Connected to database");
+  });
 };

@@ -4,9 +4,7 @@ import { useState } from "react";
 import { axios } from "../utils/axios";
 
 function Register() {
-
-
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     username: "",
     email: "",
@@ -19,21 +17,23 @@ function Register() {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/auth/register", input);
+      await axios.post("/auth/register", input);
       navigate("/login");
     } catch (err) {
-     setError(err.response.data);
+      setError(err.response.data);
     }
   };
 
+  
   return (
     <div className="auth">
       <h1>Register</h1>
-      <form >
+      <form>
         <input
           required
           type="text"
@@ -57,10 +57,7 @@ function Register() {
         />
         <button onClick={handleSubmit}>Register</button>
 
-        {error &&
-          
-          <p>{error}</p>
-        }
+        {error && <p>{error}</p>}
         <span>
           Already have an account ?<Link to="/login">Login</Link>
         </span>

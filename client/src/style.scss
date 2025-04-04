@@ -18,10 +18,13 @@ $lightGreen: #b9e7e7;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: $lightGreen;
+
+      // background-color: $lightGreen;
+      background-image:url("./img/image.png") ;
 
       h1 {
-        font-size: 20px;
+        font-size: 30px;
+        font-weight: 500;
         color: teal;
         margin-bottom: 20px;
       }
@@ -29,10 +32,10 @@ $lightGreen: #b9e7e7;
       form {
         display: flex;
         flex-direction: column;
-        padding: 50px;
+        padding: 80px;
         background-color: white;
         width: 200px;
-        gap: 20px;
+        gap: 40px;
 
         input {
           padding: 10px;
@@ -65,27 +68,48 @@ $lightGreen: #b9e7e7;
 
     .navbar {
       .container {
-        padding: 10px 0px;
+        height: 5rem;
+        padding: 0px 15px;
+        margin-bottom: 100px;
+        
+        box-shadow: #d6d1d1 8px 3px 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        // border-bottom: 1px solid rgb(168, 162, 162);
+        // background-color: red;
 
         .logo {
           img {
-            width: 120px;
+            width: 100px;
           }
         }
         .links {
+          // background-color: red;
           display: flex;
           align-items: center;
-          gap: 10px;
-
+          gap: 15px;
+          
+        
           h6 {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 300;
+            padding: 5px 10px;
+            border-radius: 5px;
+  
+            &:hover{
+            font-size: 19px;
+              border: 1px solid $lightGreen;
+              padding: 5px 10px;
+              border-radius: 5px;
+            }
           }
 
           span {
+            font-size: 20px;
+            font-weight: 300;
+
+
             cursor: pointer;
           }
 
@@ -202,7 +226,10 @@ $lightGreen: #b9e7e7;
 
     .singlePage {
       display: flex;
-      gap: 50px;
+      // border: 1px solid red;
+      gap: 90px;
+      // align-items: center;
+      // justify-content: center;
 
       .content {
         flex: 5;
@@ -264,6 +291,7 @@ $lightGreen: #b9e7e7;
         gap: 25px;
 
         h1 {
+          margin-top: 0px;
           font-size: 20px;
           color: #555;
         }
